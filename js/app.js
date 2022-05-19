@@ -47,4 +47,4 @@ const app = new Vue({
 });
 
 
-// Ciao sono Giuseppe
+// Ciao sono Giuseppe Ciao
