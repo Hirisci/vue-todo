@@ -7,12 +7,11 @@ const app = new Vue({
       { text: "Farsi la doccia", showEdit: false, done: "", hide: "" },
     ],
     newTodo: "",
-    show: false,
   },
   methods: {
     addTodo() {
       if (!this.newTodo) return;
-      this.todos.push({ text: this.newTodo });
+      this.todos.push({ text: this.newTodo, showEdit: false, done: "", hide: "" });
       this.newTodo = "";
     },
 
