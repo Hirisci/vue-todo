@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- show/hide the completed todos -->
+      <button @click="toggleCompletedTodos">👻</button>
+
+      <!-- list of all todos -->
+      <ul>
+        <li v-for="todo in todos" :class="todo.hide">
+          <div>
+            <span :class="todo.done">{{ todo.text }}</span>
+            <button @click="toggleEditInput(todo)">&#9998;</button>
+            <button @click="completeTodo(todo)">&check;</button>
+            <button @click="deleteTodo(todo)">&cross;</button>
+          </div>
+
+          <input type="text" v-if="todo.showEdit" @keyup.enter="editTodo(todo, $event)">
+        </li>
+      </ul>
+
+      <!-- add todo -->
+      <input type="text" v-model="newTodo">
+      <button @click="addTodo">Aggiungi</button>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
