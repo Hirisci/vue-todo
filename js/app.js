@@ -45,3 +45,6 @@ const app = new Vue({
     },
   },
 });
+
+
+// Ciao sono Giuseppe
